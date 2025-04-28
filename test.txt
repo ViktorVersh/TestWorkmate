@@ -1,0 +1,29 @@
+(.venv) PS F:\proekt\TestWorkmate> pytest -v
+======================================================================================== test session starts ========================================================================================
+platform win32 -- Python 3.13.1, pytest-8.3.5, pluggy-1.5.0 -- F:\proekt\TestWorkmate\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: F:\proekt\TestWorkmate
+collected 19 items                                                                                                                                                                                   
+
+test_main.py::test_validate_files_existing PASSED                                                                                                                                              [  5%]
+test_main.py::test_validate_files_nonexisting PASSED                                                                                                                                           [ 10%] 
+test_main.py::test_main_with_invalid_arguments PASSED                                                                                                                                          [ 15%] 
+test_main.py::test_main_save_to_file PASSED                                                                                                                                                    [ 21%]
+test_reports.py::test_log_analyzer_init PASSED                                                                                                                                                 [ 26%] 
+test_reports.py::test_extract_log_level[2023-01-01 12:00:00,123 INFO Test message-INFO] PASSED                                                                                                 [ 31%] 
+test_reports.py::test_extract_log_level[DEBUG Some debug message-DEBUG] PASSED                                                                                                                 [ 36%] 
+test_reports.py::test_extract_log_level[[ERROR] Critical failure-ERROR] PASSED                                                                                                                 [ 42%] 
+test_reports.py::test_extract_log_level[No level in this message-INFO] PASSED                                                                                                                  [ 47%] 
+test_reports.py::test_extract_log_level[-INFO] PASSED                                                                                                                                          [ 52%] 
+test_reports.py::test_extract_endpoint[GET /api/users HTTP/1.1-/api/users] PASSED                                                                                                              [ 57%] 
+test_reports.py::test_extract_endpoint[POST /api/login?param=value-/api/login] PASSED                                                                                                          [ 63%] 
+test_reports.py::test_extract_endpoint[Internal Server Error: /api/payment-ERROR:/api/payment] PASSED                                                                                          [ 68%] 
+test_reports.py::test_extract_endpoint[SELECT * FROM users-SQL:users] PASSED                                                                                                                   [ 73%] 
+test_reports.py::test_extract_endpoint[django.db.utils.IntegrityError-django.db] PASSED                                                                                                        [ 78%] 
+test_reports.py::test_extract_endpoint[No endpoint here-None] PASSED                                                                                                                           [ 84%] 
+test_reports.py::test_buffer_flushing PASSED                                                                                                                                                   [ 89%] 
+test_reports.py::test_empty_report PASSED                                                                                                                                                      [ 94%] 
+test_reports.py::test_reports_interface PASSED                                                                                                                                                 [100%] 
+
+======================================================================================== 19 passed in 4.00s ========================================================================================= 
+(.venv) PS F:\proekt\TestWorkmate>
