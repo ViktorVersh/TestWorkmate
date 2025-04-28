@@ -155,7 +155,7 @@ class LogAnalyzer:
         yield f"Total requests: {self.total_requests}\n"
         yield "HANDLER".ljust(column_width) + "\t" + "\t".join(level.ljust(5) for level in active_levels)
 
-        # Данные по каждому endpoint
+        # Данные по каждому endpoint (основной отчёт)
         for endpoint in sorted_endpoints:
             counts = self.handlers_data[endpoint]
             row = endpoint.ljust(column_width) + "\t" + "\t".join(
@@ -163,7 +163,7 @@ class LogAnalyzer:
             )
             yield row
 
-        # Итоговая строка
+        # Итоговая строка с суммой по всем уровням
         total_counts = []
         for level in active_levels:
             total = sum(counts.get(level, 0) for counts in self.handlers_data.values())
